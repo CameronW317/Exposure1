@@ -1,3 +1,4 @@
+package Sieve;
 // Lab11avst.java
 // The "Sieve of Eratosthenes" Program
 // This is the student, starting version of the Lab11a assignment.
@@ -12,7 +13,7 @@ public class Lab11avst
     {
         // This main method needs additions for the 100 point version.
         Scanner input = new Scanner(System.in);
-        final int MAX = 100;
+        final int MAX = 10000;
         boolean primes[];
         primes = new boolean[MAX];
         computePrimes(primes);
@@ -29,9 +30,8 @@ public class Lab11avst
         // Student edit starts here
         for(int i = 2; i < primes.length; i++){
             if (primes[i] == true){
-                for(int j = i + i; j < primes.length; j++){
+                for(int j = i + i; j < primes.length; j = j + i){
                     primes[j] = false;
-                    // Start here Tuesday
                 }
             }
 
